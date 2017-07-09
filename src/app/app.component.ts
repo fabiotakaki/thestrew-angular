@@ -13,8 +13,8 @@ import { WaypointService } from './waypoints/waypoint.service';
 })
 export class AppComponent {
   title: string = 'Tour App';
-  lat:number = 51.678418;
-  lng:number = 7.809007;
+  lat:number = 44.182876;
+  lng:number = -101.667521;
   waypoints:Waypoint[];
   tours: Tour[];
   selectedTour:Tour;
@@ -34,9 +34,6 @@ export class AppComponent {
     this.getWTours();
   }
 
-  origin:any = { latitude: 41.850033, longitude: -87.6500523 };
-  destination:any = { latitude: 40.850033, longitude: -83.6500523 };
-
   onSelect(tour: Tour): void {
     this.selectedTour = tour;
   }
@@ -45,7 +42,7 @@ export class AppComponent {
     let i = this.waypoints.length;
     this.waypoints.push({
       id: 1,
-      name: "New marker "+(i+1),
+      name: "New waypoint "+(i+1),
       lat: $event.coords.lat,
       lng: $event.coords.lng,
       label: '',

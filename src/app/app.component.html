@@ -3,8 +3,9 @@
 <div class="wrap-content">
   <div class="waypoints">
     <h1>Waypoints</h1>
+    <p>Click the map below to create waypoints.</p>
     <ul>
-      <li *ngFor="let m of waypoints">{{m.name}} <button *ngIf="selectedTour" (click)="addWaypoint(m)">Add to Tour: {{selectedTour.name}}</button></li>
+      <li *ngFor="let m of waypoints"><input [(ngModel)]="m.name" value="{{m.name}}"> <button *ngIf="selectedTour" (click)="addWaypoint(m)">Add to Tour: {{selectedTour.name}}</button></li>
     </ul>
   </div>
 
