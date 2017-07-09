@@ -1,0 +1,13 @@
+<div *ngIf="tour">
+  <h2>{{tour.name}} details</h2>
+  <div><label>id: </label>{{tour.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="tour.name" placeholder="name"/>
+  </div>
+
+  <h2>Waypoint's Tour</h2>
+  <ul class="waypoints">
+    <li *ngFor="let m of tour.waypoints; let i = index"><input [(ngModel)]="m.name" value="{{m.name}}"> <button (click)="deleteWaypoint(i)">Delete</button></li>
+  </ul>
+</div>
